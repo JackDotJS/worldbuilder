@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 /.local
+gha-build.txt
+gha-hash.txt
 
 # Editor directories and files
 .vscode/*
