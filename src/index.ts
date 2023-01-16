@@ -1,6 +1,8 @@
 import { loadInterface } from './ui/ui-manager'
+import uiHomepage from './ui/interfaces/home.html?raw'
 
-loadInterface(`src/ui/interfaces/home.html`);
+
+loadInterface(uiHomepage);
 
 
 // get build date

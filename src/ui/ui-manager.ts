@@ -1,13 +1,14 @@
-export async function loadInterface(url: string) {
+export async function loadInterface(markup: string) {
   try {
-    const result = await fetch(url);
-
-    if (result.status !== 200) throw new Error(`Got status ${result.status} while attempting to load interface from ${url}`)
-
-    const markup = await result.text();
     const doc = new DOMParser().parseFromString(markup, `text/html`);
 
-    document.querySelector(`main`)!.replaceWith(doc.querySelector(`main`)!);
+    const main = document.querySelector(`main`);
+    const newMain = doc.querySelector(`main`);
+
+    if (main == null) throw Error(`loadInterface: Could not find main element in current document.`);
+    if (newMain == null) throw Error(`loadInterface: Could not find main element in replacement document.`);
+
+    main.replaceWith(newMain);
   }
 
   catch (e) {
