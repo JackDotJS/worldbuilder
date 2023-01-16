@@ -47,7 +47,7 @@ jobs:
 
       - name: Write Compile Date
         # used to show when the webapp was last updated (...sorta)
-        run: echo "$(git rev-parse --short HEAD)" >> dist/gha-build.txt
+        run: echo "$(date +%s)" >> dist/gha-build.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
