@@ -13,4 +13,4 @@ jobs:
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.ANNOUNCEMENTS_WEBHOOK_URL }}
-          content: "${{ github.event.discussion.html_url }}"
+          content: "<@&1092152927507972167> New WorldBuilder announcement! ${{ github.event.discussion.html_url }}"
