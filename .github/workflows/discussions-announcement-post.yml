@@ -2,7 +2,7 @@ name: Discussions Announcement Post Handler
 
 on:
   discussion:
-    type: created
+    types: created
 
 jobs:
   publish-announcement:
